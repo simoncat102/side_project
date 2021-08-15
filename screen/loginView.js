@@ -13,7 +13,7 @@ export default function App() {
   return (
     <>
       {/* 透過這個"<>"可以在同一頁有多個view */}
-      <View style={styles.container}>
+      <View style={styles.container} name="login">
         <Image
           source={require("./assets/images/coreTran.jpeg")}
           style={styles.logo}

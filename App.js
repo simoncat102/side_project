@@ -1,5 +1,8 @@
 import { StatusBar } from "expo-status-bar";
 import React from "react";
+import "react-native-gesture-handler";
+// import { NavigationContainer } from "@react-navigation/native";
+
 import {
   StyleSheet,
   Text,
@@ -9,21 +12,28 @@ import {
   TouchableOpacity,
 } from "react-native";
 
-export default function App() {
+export default function App({ navigation }) {
   return (
     <>
       {/* 透過這個"<>"可以在同一頁有多個view */}
       <View style={styles.container}>
-        <Image
+        {/* <Image
           source={require("./assets/images/coreTran.jpeg")}
           style={styles.logo}
-        />
+        /> */}
         {/* 放照片的方法 "sourse為來源 styles.logo 有點像css" */}
 
         {/* 有背景的button */}
         <TouchableOpacity style={styles.button}>
           <Text style={styles.buttonText}> Sign In </Text>
         </TouchableOpacity>
+
+        <Stack.Navigator>
+          <Stack.Screen name="Home" component={Home} />
+          <Stack.Screen name="Notifications" component={Notifications} />
+          <Stack.Screen name="Profile" component={Profile} />
+          <Stack.Screen name="Settings" component={Settings} />
+        </Stack.Navigator>
 
         {/* 基礎的按鍵 */}
         {/* flexDirection 讓他可以變成並排 */}
@@ -35,6 +45,7 @@ export default function App() {
         </View>
 
         <StatusBar style="auto" />
+        {/* 上面wifi那些的顏色 */}
       </View>
     </>
   );
@@ -48,9 +59,9 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
   },
-  textFamily:{
+  textFamily: {
     fontFamily: "Verdana",
-    fontWeight:"bold",
+    fontWeight: "bold",
     fontSize: 12,
   },
   logo: {
