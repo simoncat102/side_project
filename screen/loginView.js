@@ -9,15 +9,15 @@ import {
   TouchableOpacity,
 } from "react-native";
 
-export default function App() {
+export default function login() {
   return (
     <>
       {/* 透過這個"<>"可以在同一頁有多個view */}
       <View style={styles.container} name="login">
-        <Image
-          source={require("./assets/images/coreTran.jpeg")}
+        {/* <Image
+          source={require('/Users/mac/本機檔案/side-project/assets/images/logo.jpeg')}
           style={styles.logo}
-        />
+        /> */}
         {/* 放照片的方法 "sourse為來源 styles.logo 有點像css" */}
 
         {/* 有背景的button */}
@@ -48,15 +48,16 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
   },
-  textFamily:{
+  textFamily: {
     fontFamily: "Verdana",
-    fontWeight:"bold",
+    fontWeight: "bold",
     fontSize: 12,
   },
   logo: {
-    width: 180,
-    height: 180,
+    width: 100,
+    height: 100,
     // flex:1,
+    marginTop: 100,
   },
   button: {
     margin: 20,
